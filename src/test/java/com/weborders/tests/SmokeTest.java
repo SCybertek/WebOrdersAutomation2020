@@ -21,7 +21,8 @@ public class SmokeTest extends AbstractBaseTest {
         extentTest.pass(component + " verified!");
     }
 
-    @DataProvider
+    @DataProvider (parallel = true) // to execute all tests in parallel
+    // driver server has unexpectedly died .. our driver is static and it is shared that's why
     public Object[][] smokeTestData() {
         return new Object[][]{
                 {"View all orders", "List of All Orders"},
